@@ -15,7 +15,7 @@ class Users extends Admin_Controller {
 		$this->data['pagetitle'] = $this->page_title->show();
 
 		/* Breadcrumbs :: Common */
-		$this->breadcrumbs->unshift(1, lang('menu_users'), 'portal/users');
+		$this->breadcrumbs->unshift(1, lang('menu_users'), '#');
 	}
 
 
@@ -38,7 +38,8 @@ class Users extends Admin_Controller {
 			}
 
 			/* Load Template */
-			$this->template->admin_render('portal/users/index', $this->data);
+			//$this->template->admin_render('portal/users/index', $this->data);
+			$this->load->view('portal/users/index',$this->data);
 		}
 	}
 

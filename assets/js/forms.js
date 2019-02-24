@@ -5,6 +5,7 @@ $("button").click(function(event){
 
     var form = $('#form1');
     form.submit(function(event){
+        alert("yes");
         event.preventDefault();
     });
 });

@@ -1,11 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends Public_Controller {
+class Home extends Admin_Controller {
 
     public function __construct()
     {
         parent::__construct();
+
+        /* Load :: Common */
+        $this->lang->load('public/home');
+        /* Title Page :: Common */
+        $this->page_title->push(lang('home_title'));
+        $this->data['pagetitle'] = $this->page_title->show();
+
     }
 
 
@@ -15,7 +22,8 @@ class Home extends Public_Controller {
         {
             redirect('auth/login', 'refresh');
         }else{
-            redirect('portal/dashboard', 'refresh');
+            /* Load Template */
+            $this->template->admin_render('public/home', $this->data);
         }
 	}
 }

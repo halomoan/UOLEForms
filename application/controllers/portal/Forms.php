@@ -17,7 +17,7 @@ class Forms extends Admin_Controller {
         $this->data['pagetitle'] = $this->page_title->show();
 
         /* Breadcrumbs :: Common */
-        $this->breadcrumbs->unshift(1, lang('menu_forms'), 'portal/forms');
+        $this->breadcrumbs->unshift(1, lang('menu_forms'), '#');
 
     }
 
@@ -37,15 +37,12 @@ class Forms extends Admin_Controller {
                 /* Data */
                 $this->data['error'] = NULL;
 
-                /* JS */
-                $this->data['loadjs'] = TRUE;
-                $this->data['js_name'] = 'forms.js';
-
                 /* Forms Data */
                 $this->data['form1'] =  $this->forms_model->get_form('1');
 
                 /* Load Template */
-                $this->template->admin_render('portal/forms/index', $this->data);
+                $this->load->view('portal/forms/index',$this->data);
+
 
 
 

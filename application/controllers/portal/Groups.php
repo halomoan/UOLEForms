@@ -14,7 +14,7 @@ class Groups extends Admin_Controller {
         $this->data['pagetitle'] = $this->page_title->show();
 
         /* Breadcrumbs :: Common */
-        $this->breadcrumbs->unshift(1, lang('menu_security_groups'), 'portal/groups');
+        $this->breadcrumbs->unshift(1, lang('menu_security_groups'), '#');
     }
 
 
@@ -32,7 +32,8 @@ class Groups extends Admin_Controller {
             $this->data['groups'] = $this->ion_auth->groups()->result();
 
             /* Load Template */
-            $this->template->admin_render('portal/groups/index', $this->data);
+            //$this->template->admin_render('portal/groups/index', $this->data);
+			$this->load->view('portal/groups/index',$this->data);
         }
     }
 

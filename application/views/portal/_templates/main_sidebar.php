@@ -40,7 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <li class="header text-uppercase"><?php echo lang('menu_main_navigation'); ?></li>
                         <li class="<?=active_link_controller('dashboard')?>">
-                            <a href="<?php echo site_url('portal/dashboard'); ?>">
+                            <a class="sidemenu" href="#" name="dashboard">
                                 <i class="fa fa-dashboard"></i> <span><?php echo lang('menu_dashboard'); ?></span>
                             </a>
                         </li>
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <li class="<?=active_link_controller('forms')?>">
 
-                            <a href="<?php echo site_url('portal/forms'); ?>">
+                            <a class="sidemenu" href="#" name="forms">
                                 <i class="fa fa-wpforms"></i><span><?php echo lang('menu_forms'); ?></span>
                             </a>
 
@@ -56,12 +56,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <li class="header text-uppercase"><?php echo lang('menu_administration'); ?></li>
                         <li class="<?=active_link_controller('users')?>">
-                            <a href="<?php echo site_url('portal/users'); ?>">
+                            <a class="sidemenu" href="#" name="users">
                                 <i class="fa fa-user"></i> <span><?php echo lang('menu_users'); ?></span>
                             </a>
                         </li>
                         <li class="<?=active_link_controller('groups')?>">
-                            <a href="<?php echo site_url('portal/groups'); ?>">
+                            <a class="sidemenu" href="#" name="groups">
                                 <i class="fa fa-shield"></i> <span><?php echo lang('menu_security_groups'); ?></span>
                             </a>
                         </li>
@@ -72,7 +72,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="<?=active_link_function('interfaces')?>"><a href="<?php echo site_url('portal/prefs/interfaces/admin'); ?>"><?php echo lang('menu_interfaces'); ?></a></li>
+                                <li class="<?=active_link_function('interfaces')?>">
+                                    <a class="sidemenu" href="#" name="prefs_admin">
+                                        <?php echo lang('menu_interfaces'); ?>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="<?=active_link_controller('files')?>">

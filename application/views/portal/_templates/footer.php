@@ -29,10 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php endif; ?>
         <script src="<?php echo base_url($frameworks_dir . '/adminlte/js/adminlte.min.js'); ?>"></script>
         <script src="<?php echo base_url($frameworks_dir . '/domprojects/js/dp.min.js'); ?>"></script>
-<?php if ( isset($loadjs) &&  $loadjs === TRUE): ?>
-    <!-- AngularJs -->
-    <!--<script src="<?php /*echo base_url($plugins_dir . '/angularjs/angular.min.js'); */?>"></script>-->
-    <script type="text/javascript" src="<?php echo base_url($js_dir .'/'. $js_name ); ?>"></script>
-<?php endif; ?>
+        <script type="text/javascript" src="<?php echo base_url($js_dir .'/contentloader.js' ); ?>"></script>
     </body>
 </html>

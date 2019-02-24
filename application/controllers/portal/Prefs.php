@@ -86,7 +86,8 @@ class Prefs extends Admin_Controller {
             else
             {
                 /* Load Template */
-                $this->template->admin_render('portal/prefs/interfaces/admin', $this->data);
+                //$this->template->admin_render('portal/prefs/interfaces/admin', $this->data);
+                $this->load->view('portal/prefs/interfaces/admin', $this->data);
             }
         }
         elseif ($type == 'public')
@@ -115,7 +116,8 @@ class Prefs extends Admin_Controller {
             else
             {
                 /* Load Template */
-                $this->template->admin_render('portal/prefs/interfaces/public', $this->data);
+                //$this->template->admin_render('portal/prefs/interfaces/public', $this->data);
+                $this->load->view('portal/prefs/interfaces/public', $this->data);
             }
         }
         else

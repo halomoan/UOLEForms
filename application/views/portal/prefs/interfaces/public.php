@@ -2,8 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
-
-            <div class="content-wrapper">
                 <section class="content-header">
                     <?php echo $pagetitle; ?>
                     <?php echo $breadcrumb; ?>
@@ -14,8 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-12">
                             <div class="nav-tabs-custom">
                                 <ul class="nav nav-tabs">
-                                    <li><?php echo anchor('portal/prefs/interfaces/admin', lang('menu_int_admin')); ?></li>
-                                    <li class="active"><?php echo anchor('portal/prefs/interfaces/public', lang('menu_int_public')); ?></li>
+                                    <li><?php echo anchor('portal/prefs/interfaces/admin', lang('menu_int_admin'),'class="linkClick" name="prefs_admin"'); ?></li>
+                                    <li class="active"><?php echo anchor('portal/prefs/interfaces/public', lang('menu_int_public'),'class="linkClick" name="prefs_public"'); ?></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="tab_public">
@@ -50,4 +48,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                 </section>
-            </div>

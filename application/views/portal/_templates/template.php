@@ -24,7 +24,9 @@ if (isset($main_sidebar))
 
 if (isset($content))
 {
+    echo '<div class="content-wrapper" id="content-wrapper">';
     echo $content;
+    echo '</div>';
 }
 
 if (isset($control_sidebar) AND $admin_prefs['ctrl_sidebar'] == TRUE)
@@ -35,4 +37,5 @@ if (isset($control_sidebar) AND $admin_prefs['ctrl_sidebar'] == TRUE)
 if (isset($footer))
 {
     echo $footer;
+
 }
