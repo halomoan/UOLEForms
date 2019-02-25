@@ -23,19 +23,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                             <?php echo lang('groups_name', 'group_name', array('class' => 'col-sm-2 control-label')); ?>
                                             <div class="col-sm-10">
                                                 <?php echo form_input($group_name);?>
+                                                <span class="help-block" style="display:none"></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <?php echo lang('groups_description', 'description', array('class' => 'col-sm-2 control-label')); ?>
                                             <div class="col-sm-10">
                                                 <?php echo form_input($description);?>
+                                                <span class="help-block" style="display:none"></span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <div class="btn-group">
-                                                    <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'), 'name' => 'submit')); ?>
-                                                    <?php echo form_button(array('type' => 'none', 'class' => 'btn btn-default btn-flat', 'content' => lang('actions_cancel'), 'name' => 'cancel') ); ?>
+                                                    <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'), 'name' => 'create_submit')); ?>
+                                                    <?php echo form_button(array('type' => 'none', 'class' => 'btn btn-default btn-flat', 'content' => lang('actions_cancel'), 'name' => 'create_cancel') ); ?>
                                                 </div>
                                             </div>
                                         </div>
