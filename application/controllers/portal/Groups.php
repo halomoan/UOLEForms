@@ -81,7 +81,8 @@ class Groups extends Admin_Controller {
 			);
 
             /* Load Template */
-            $this->template->admin_render('portal/groups/create', $this->data);
+            //$this->template->admin_render('portal/groups/create', $this->data);
+			$this->load->view('portal/groups/create', $this->data);
 		}
 	}
 
@@ -172,6 +173,7 @@ class Groups extends Admin_Controller {
 		);
 
         /* Load Template */
-        $this->template->admin_render('portal/groups/edit', $this->data);
+        //$this->template->admin_render('portal/groups/edit', $this->data);
+        $this->load->view('portal/groups/edit', $this->data);
 	}
 }

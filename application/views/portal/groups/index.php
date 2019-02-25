@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="col-md-12">
                              <div class="box">
                                 <div class="box-header with-border">
-                                    <h3 class="box-title"><?php echo anchor('portal/groups/create', '<i class="fa fa-plus"></i> '. lang('groups_create'), array('class' => 'btn btn-block btn-primary btn-flat')); ?></h3>
+                                    <h3 class="box-title"><a href="#" class="linkClick btn btn-block btn-primary btn-flat" name="create"><?php echo lang('groups_create')?></a></h3>
                                 </div>
                                 <div class="box-body">
                                     <table class="table table-striped table-hover">
@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo htmlspecialchars($values->name, ENT_QUOTES, 'UTF-8'); ?></td>
                                                 <td><?php echo htmlspecialchars($values->description, ENT_QUOTES, 'UTF-8'); ?></td>
                                                 <td><i class="fa fa-stop" style="color:<?php echo $values->bgcolor; ?>"></i></td>
-                                                <td><?php echo anchor("portal/groups/edit/".$values->id, lang('actions_edit')); ?></td>
+                                                <td><a href="#" class="linkClick" name="edit" param="<?php echo $values->id; ?>"><?php echo lang('actions_edit')?></td>
                                             </tr>
 <?php endforeach;?>
                                         </tbody>

@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-            <div class="content-wrapper">
                 <section class="content-header">
                     <?php echo $pagetitle; ?>
                     <?php echo $breadcrumb; ?>
@@ -35,9 +34,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <div class="btn-group">
-                                                    <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'))); ?>
-                                                    <?php echo form_button(array('type' => 'reset', 'class' => 'btn btn-warning btn-flat', 'content' => lang('actions_reset'))); ?>
-                                                    <?php echo anchor('portal/groups', lang('actions_cancel'), array('class' => 'btn btn-default btn-flat')); ?>
+                                                    <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'), 'name' => 'submit')); ?>
+                                                    <?php echo form_button(array('type' => 'none', 'class' => 'btn btn-default btn-flat', 'content' => lang('actions_cancel'), 'name' => 'cancel') ); ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -47,4 +45,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                          </div>
                     </div>
                 </section>
-            </div>
