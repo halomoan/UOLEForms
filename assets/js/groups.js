@@ -23,6 +23,7 @@ $(function () {
     });
 
     $("button").click(function(e){
+
         e.preventDefault();
         var linkName = $(this).attr('name');
         switch (linkName) {
@@ -49,23 +50,24 @@ $(function () {
 
     function create_submit(){
         var form = $('#form-create_group');
+        var busy = $('#busy');
         var formData = $(form).serialize();
         var status = validate_form( $(form) , formOriData );
         if( status.valid ) {
+            $(busy).show();
             $.post($(form).attr('action'),formData)
                 .done(
                     function(response){
+                        $(busy).hide();
                         goinit();
                     }
                 ).fail(
                 function(data){
-                    console.log(data);
+                    $(busy).hide();
                 }
             );
         } else {
-            if (status.prompt) {
-                alert(status.msg);
-            }
+            showStatus(status);
         }
 
     }
@@ -73,22 +75,22 @@ $(function () {
     function edit_submit(){
         var form = $('#form-edit_group');
         var formData = $(form).serialize();
-
-
-        if(JSON.stringify(formData) != JSON.stringify(formOriData)) {
+        var busy = $('#busy');
+        var status = validate_form( $(form) , formOriData );
+        if( status.valid ) {
             $.post($(form).attr('action'), formData)
                 .done(
                     function (response) {
+                        $(busy).hide();
                         goinit();
                     }
                 ).fail(
                 function (data) {
-                    console.log(data);
+                    $(busy).hide();
                 }
             );
         }else{
-            alert('nothing is changed');
-            console.log(JSON.stringify(formData) , JSON.stringify(formOriData))
+            showStatus(status);
         }
     }
 
@@ -123,8 +125,15 @@ $(function () {
         });
 
         return status;
+    }
 
-
+    function showStatus(status){
+        if (!status.valid && status.prompt){
+            $("#msg_text").html(status.msg);
+            $("#msg_text").show();
+        } else{
+            $("#msg_text").hide();
+        }
     }
 
 });

@@ -16,7 +16,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <h3 class="box-title"><?php echo lang('groups_create'); ?></h3>
                                 </div>
                                 <div class="box-body">
-                                    <?php echo $message;?>
+
+
 
                                     <?php echo form_open(current_url(), array('class' => 'form-horizontal', 'id' => 'form-create_group')); ?>
                                         <div class="form-group">
@@ -33,16 +34,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <span class="help-block" style="display:none"></span>
                                             </div>
                                         </div>
+                                    <div class="form-group">
+                                        <?php echo lang('', 'text', array('class' => 'col-sm-2 control-label')); ?>
+                                        <div class="col-sm-10">
+                                            <p class="text-red" id="msg_text" style="display:none">Lead to emphasize importance</p>
+                                        </div>
+                                        </div>
                                         <div class="form-group">
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <div class="btn-group">
-                                                    <?php echo form_button(array('type' => 'submit', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'), 'name' => 'create_submit')); ?>
+                                                    <?php echo form_button(array('type' => 'none', 'class' => 'btn btn-primary btn-flat', 'content' => lang('actions_submit'),'data-toggle' =>"modal",'data-target'=>"#modal-info")); ?>
                                                     <?php echo form_button(array('type' => 'none', 'class' => 'btn btn-default btn-flat', 'content' => lang('actions_cancel'), 'name' => 'create_cancel') ); ?>
                                                 </div>
                                             </div>
                                         </div>
                                     <?php echo form_close();?>
+                                    <div class="modal fade" id="modal-info">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title"><span id="msg_title">Confirmation</span></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p><span id="msg_text"><?php echo lang("create_confirm")?></span></p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal" name="create_submit">Save changes</button>
+                                                </div>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
                                 </div>
+
+                                 <div class="overlay" id="busy" style="display:none">
+                                     <i class="fa fa-refresh fa-spin"></i>
+                                 </div>
                             </div>
                          </div>
                     </div>
