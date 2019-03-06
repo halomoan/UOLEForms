@@ -22,7 +22,7 @@ $(".sidemenu").click(function(e){
             break;
         case "groups":
             $("#content-wrapper").load(base_url+"/portal/groups",function() {
-                $.getScript(base_url+"/assets/js/groups.js")
+                $.getScript(base_url+"/assets/js/groups.js");
             });
             break;
         case "prefs_admin":

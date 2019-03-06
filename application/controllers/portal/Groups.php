@@ -11,6 +11,7 @@ class Groups extends Admin_Controller {
 
         /* Title Page :: Common */
         $this->page_title->push(lang('menu_security_groups'));
+		$this->load->model('portal/group_model');
         $this->data['pagetitle'] = $this->page_title->show();
 
         /* Breadcrumbs :: Common */
@@ -99,7 +100,16 @@ class Groups extends Admin_Controller {
         }
         else
         {
-            $this->load->view('portal/groups/delete');
+			if($_POST) {
+				$id = $this->input->post('id');
+				if ($id) {
+					$dbmsg = $this->group_model->delete_group($id);
+					$this->output
+						->set_content_type('application/json')
+						->set_output(json_encode($dbmsg));
+				}
+			}
+
         }
 	}
 

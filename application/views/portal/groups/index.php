@@ -31,12 +31,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                 <td><?php echo htmlspecialchars($values->name, ENT_QUOTES, 'UTF-8'); ?></td>
                                                 <td><?php echo htmlspecialchars($values->description, ENT_QUOTES, 'UTF-8'); ?></td>
                                                 <td><i class="fa fa-stop" style="color:<?php echo $values->bgcolor; ?>"></i></td>
-                                                <td><a href="#" class="linkClick" name="edit" param="<?php echo $values->id; ?>"><?php echo lang('actions_edit')?></td>
+                                                <td><a href="#" class="linkClick" name="edit" param="<?php echo $values->id; ?>"><?php echo lang('actions_edit')?>&nbsp;|&nbsp;
+                                                    <a href="#" class="linkClick" name="delete" param="<?php echo $values->id; ?>" action="<?php echo current_url()?>"><?php echo lang('actions_delete')?>
+                                                </td>
                                             </tr>
 <?php endforeach;?>
                                         </tbody>
                                     </table>
+
                                 </div>
+                                 <div class="overlay" id="busy" style="display:none">
+                                     <i class="fa fa-refresh fa-spin"></i>
+                                 </div>
                             </div>
                          </div>
                     </div>

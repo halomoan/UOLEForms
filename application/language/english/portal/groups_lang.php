@@ -16,5 +16,8 @@ $lang['groups_action']      = 'Action';
 $lang['groups_edit_group']  = 'Edit group';
 $lang['groups_create']      = 'Create group';
 $lang['groups_color']       = 'Color';
-$lang['create_confirm'] = 'Confirm To Create This Group?';
-$lang['edit_confirm'] = 'Confirm To Change This Group?';
+
+$lang['confirmation'] = 'Confirmation';
+$lang['create_confirm'] = 'Confirm To Create This Record?';
+$lang['edit_confirm'] = 'Confirm To Change This Record?';
+$lang['delete_confirm'] = 'Confirm To Delete This Record?';
